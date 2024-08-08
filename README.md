@@ -1,4 +1,4 @@
-# BLUESTOCK-FINTECH-S46-
+# BlueStock Fintech Team BF-
 This project involves developing an IPO web application and REST API for the Bluestock website/app and our clients' websites/apps.
 <br>
 Important –
