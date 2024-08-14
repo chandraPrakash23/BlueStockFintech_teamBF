@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div class="container">
+        <div class="section">
+            <div class="dashboard">
+                <h2>IPO Dashboard India</h2>
+                <h3><span class="gain-text">↑ 20 IPO in Gain</span></h3>
+                <div class="circles">
+                    <div class="circle total-ipo">
+                        <div class="ring"></div>
+                        <span>30</span>
+                        <span>Total IPO</span>
+                    </div>
+                    <div class="circle ipo-in-gain">
+                        <div class="ring"></div>
+                        <span>20</span>
+                        <span>IPO in Gain</span>
+                    </div>
+                    <div class="circle ipo-in-loss">
+                        <div class="ring"></div>
+                        <span>9</span>
+                        <span>IPO in Loss</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Quick Links</h2>
+            <p>Adipiscing elit, sed do eiusmod tempor</p>
+            <ul class="links">
+                <li>
+                    <img src="../images/nse.webp" alt="NSE India">
+                    <span>NSE India</span>
+                    <a href="#">Visit Now</a>
+                </li>
+                <li>
+                    <img src="../images/BSE-Logo.png" alt="BSE India">
+                    <span>BSE India</span>
+                    <a href="#">Visit Now</a>
+
+                </li>
+                <li>
+                    <img src="../images/Sebi.webp" alt="SEBI">
+                    <span>SEBI</span>
+                    <a href="#">Visit Now</a>
+
+                </li>
+                <li>
+                    <img src="../images/mc.webp" alt="Money Control">
+                    <span>Money Control</span>
+                    <a href="#">Visit Now</a>
+
+                </li>
+            </ul>
+        </div>
+        <div style="border: none;" class="section">
+            <div class="top-section">
+                <h2>Main Board IPO</h2>
+                <button class="view-report">View Report</button>
+            </div>
+            <p>From 01 Jan 2024</p>
+            <div class="chart">
+                <canvas id="mainBoardIPOChart"></canvas>
+            </div>
+            <div class="legend">
+                <div class="legend-item">
+                    <span style="background-color: #8369E3;"></span>
+                    <span>Upcoming</span>
+                    <span>15</span>
+                </div>
+                <div class="legend-item">
+                    <span style="background-color: #A7B0D3;"></span>
+                    <span>New Listed</span>
+                    <span>25</span>
+                </div>
+                <div class="legend-item">
+                    <span style="background-color: #D6D8E4;"></span>
+                    <span>Ongoing</span>
+                    <span>2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html>
