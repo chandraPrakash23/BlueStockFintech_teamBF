@@ -1,57 +1,45 @@
-// const ctx = document.getElementById('mainBoardIPOChart').getContext('2d');
-//         const mainBoardIPOChart = new Chart(ctx, {
-//             type: 'doughnut',
-//             data: {
-//                 // labels: ['Upcoming', 'New Listed', 'Ongoing'],
-//                 datasets: [{
-//                     data: [15, 25, 2],
-//                     backgroundColor: ['#8369E3', '#A7B0D3', '#D6D8E4'],
-//                     hoverBackgroundColor: ['#512DA8', '#8792f5', '#EEEEEE']
-//                 }]
-//             },
-//             options: {
-//                 cutoutPercentage: 60,
-//                 legend: {
-//                     display: false
-//                 },
-//                 tooltips: {
-//                     callbacks: {
-//                         label: function (tooltipItem, data) {
-//                             const dataset = data.datasets[tooltipItem.datasetIndex];
-//                             const currentValue = dataset.data[tooltipItem.index];
-//                             const label = data.labels[tooltipItem.index];
-//                             return label + ': ' + currentValue;
-//                         }
-//                     }
-//                 }
-//             }
-//         });
-
-
 const ctx = document.getElementById('mainBoardIPOChart').getContext('2d');
-        const mainBoardIPOChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                datasets: [{
-                    data: [15, 25, 2],
-                    backgroundColor: ['#8369E3', '#A7B0D3', '#D6D8E4'],
-                    hoverBackgroundColor: ['#512DA8', '#8792f5', '#EEEEEE']
-                }]
-            },
-            options: {
-                cutoutPercentage: 60,
-                legend: {
-                    display: false
+
+const chartData = {
+    // labels: ['Afternoon', 'Morning', 'Evening'],
+    datasets: [{
+        data: [15, 25, 2],
+        backgroundColor: ['#8369E3', '#A7B0D3', '#D6D8E4'],
+        hoverOffset: 4
+    }]
+};
+
+const chartOptions = {
+    responsive: true,
+    plugins: {
+        tooltip: {
+            backgroundColor: '#0a0536', 
+            titleColor: '#FFFFFF', 
+            bodyColor: '#FFFFFF', 
+            displayColors: false, 
+            callbacks: {
+                label: function () {
+                    return ''; 
                 },
-                tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            const dataset = data.datasets[tooltipItem.datasetIndex];
-                            const currentValue = dataset.data[tooltipItem.index];
-                            const label = data.labels[tooltipItem.index];
-                            return label + ': ' + currentValue;
-                        }
-                    }
+                afterLabel: function (context) {
+                    const labelIndex = context.dataIndex;
+                    const labelMapping = {
+                        0: ['Afternoon', 'IPO NSE & BSE', '15'],
+                        1: ['Morning', 'IPO NSE', '25'],
+                        2: ['Evening', 'IPO BSE', '2']
+                    };
+                    const label = labelMapping[labelIndex];
+                    return label ? label.join('\n') : '';
                 }
-            }
-        });
+            },
+            padding: 12, 
+            cornerRadius: 6, 
+        }
+    }
+};
+
+new Chart(ctx, {
+    type: 'doughnut',
+    data: chartData,
+    options: chartOptions
+});
